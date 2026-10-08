@@ -42,9 +42,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       try {
         var s = localStorage.getItem('lyp-size');
         if (s) document.documentElement.setAttribute('data-size', s);
-        var t = localStorage.getItem('lyp-theme');
-        if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
-        if (t) document.documentElement.setAttribute('data-theme', t);
       } catch (e) {}
     </script>
   </head>

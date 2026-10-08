@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import { themes, countLabel, type Photo } from '../../lib/photos';
+
+export function getStaticPaths() {
+  return themes.map((t, i) => ({
+    params: { theme: t.slug },
+    props: { theme: t, prev: themes[i - 1], next: themes[i + 1] },
+  }));
+}
+const { theme, prev, next } = Astro.props;
+
+// Групи за підрозділами (наприклад, 6.5.1–6.5.6); решта тем без груп
+const groups: { title: string | null; photos: Photo[] }[] = [];
+for (const p of theme.photos) {
+  const t = p.section ?? null;
+  const g = groups[groups.length - 1];
+  if (g && g.title === t) g.photos.push(p);
+  else groups.push({ title: t, photos: [p] });
+}
+---
+<Base title={`${theme.title}: фото`} description={`Фотоальбом села Липляни, тема «${theme.title}»: ${countLabel(theme.photos.length)}.`}>
+  <div class="mx-auto max-w-5xl px-4 pt-10">
+    <nav aria-label="Навігація" class="text-sm text-muted">
+      <a href="/foto/" class="underline underline-offset-4 hover:text-accent">Фотоальбом</a>
+      <span aria-hidden="true"> › </span>
+      <span>Розділ {theme.ref}</span>
+    </nav>
+    <h1 class="font-serif font-bold text-ink text-3xl md:text-4xl leading-tight mt-3">{theme.title}</h1>
+    <p class="mt-2 text-muted">{countLabel(theme.photos.length)}. Натисніть на фото, щоб збільшити.</p>
+
+    {groups.map((g) => (
+      <section class="mt-8">
+        {g.title && <h2 class="font-serif font-bold text-xl text-accent border-b border-line pb-2 mb-4">{g.title}</h2>}
+        <Gallery photos={g.photos} themeTitle={theme.title} />
+      </section>
+    ))}
+
+    <nav aria-label="Інші теми" class="mt-14 grid gap-3 sm:grid-cols-2 border-t border-line pt-6">
+      {prev ? (
+        <a href={`/foto/${prev.slug}/`} class="rounded border border-line p-4 hover:bg-linen text-ink">
+          <span class="text-sm text-muted block">← Попередня тема</span>
+          <span class="font-serif font-semibold">{prev.title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/foto/${next.slug}/`} class="rounded border border-line p-4 hover:bg-linen text-ink sm:text-right">
+          <span class="text-sm text-muted block">Наступна тема →</span>
+          <span class="font-serif font-semibold">{next.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </div>
+</Base>

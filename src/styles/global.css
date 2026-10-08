@@ -6,7 +6,7 @@
 @import "@fontsource/source-sans-3/600.css";
 @import "@fontsource/source-sans-3/700.css";
 
-/* Кольори. Контраст перевірено (WCAG): текст на тлі ≥ 7:1 у обох темах. */
+/* Кольори. Контраст перевірено (WCAG): текст на тлі ≥ 7:1. Лише світла тема. */
 :root {
   --paper: #F7F1E5;
   --ink: #2B2118;
@@ -17,17 +17,6 @@
   --moss: #3C5A3A;
   --line: #D8CBB0;
   color-scheme: light;
-}
-:root[data-theme="dark"] {
-  --paper: #1C1813;
-  --ink: #EFE6D5;
-  --muted: #B9AB96;
-  --accent: #E0948B;
-  --accent-ink: #1C1813;
-  --linen: #2A241C;
-  --moss: #9DBB97;
-  --line: #3B3328;
-  color-scheme: dark;
 }
 
 @theme inline {

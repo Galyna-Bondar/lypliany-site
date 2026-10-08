@@ -1,0 +1,116 @@
+---
+import { thumb, view, original, type Photo } from '../lib/photos';
+interface Props { photos: Photo[]; themeTitle: string }
+const { photos, themeTitle } = Astro.props;
+const alt = (p: Photo) => p.caption ?? `Фото з теми «${themeTitle}»`;
+---
+<ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" data-gallery>
+  {photos.map((p) => (
+    <li>
+      <a
+        href={view(p)}
+        class="block rounded overflow-hidden border border-line bg-linen focus-visible:outline-4 focus-visible:outline-accent"
+        data-lb
+        data-full={view(p)}
+        data-w={p.vw}
+        data-h={p.vh}
+        data-caption={p.caption ?? ''}
+        data-no={p.no ?? ''}
+        data-orig={original(p) ?? ''}
+        aria-label={`Відкрити фото: ${alt(p)}`}
+      >
+        <img
+          src={thumb(p)}
+          width={p.tw}
+          height={p.th}
+          alt={alt(p)}
+          loading="lazy"
+          decoding="async"
+          class="w-full aspect-[4/3] object-cover"
+        />
+      </a>
+      {p.caption && (
+        <p class="mt-1.5 text-sm leading-snug text-muted line-clamp-3">
+          {p.no && <span class="font-semibold">{p.no}. </span>}{p.caption}
+        </p>
+      )}
+    </li>
+  ))}
+</ul>
+
+<dialog id="lb" class="m-0 p-0 w-screen h-screen max-w-none max-h-none bg-transparent text-white" aria-label="Перегляд фото">
+  <div class="relative w-full h-full flex flex-col">
+    <div class="flex items-center justify-between gap-3 px-3 py-2 text-base">
+      <span id="lb-count" aria-live="polite"></span>
+      <button type="button" id="lb-close" class="min-w-12 min-h-12 px-4 rounded border-2 border-white/70 font-semibold hover:bg-white/15">Закрити ✕</button>
+    </div>
+    <div class="flex-1 min-h-0 flex items-center justify-center px-2">
+      <img id="lb-img" alt="" class="max-w-full max-h-full object-contain" />
+    </div>
+    <div class="px-4 pt-3 pb-4 text-lg leading-snug">
+      <p id="lb-caption" class="max-w-3xl mx-auto"></p>
+      <div class="max-w-3xl mx-auto mt-3 grid grid-cols-2 gap-3">
+        <button type="button" id="lb-prev" class="min-h-12 px-4 rounded border-2 border-white/70 font-semibold hover:bg-white/15">← Назад</button>
+        <button type="button" id="lb-next" class="min-h-12 px-4 rounded border-2 border-white/70 font-semibold hover:bg-white/15">Далі →</button>
+      </div>
+      <p class="max-w-3xl mx-auto mt-3 flex flex-wrap gap-x-5 gap-y-1 text-base">
+        <a id="lb-download" download class="underline underline-offset-4">Завантажити фото</a>
+        <a id="lb-orig" download class="underline underline-offset-4" hidden>Завантажити оригінал</a>
+      </p>
+    </div>
+  </div>
+</dialog>
+
+<style is:global>
+  #lb::backdrop { background: #140e08; }
+  #lb[open] { display: block; background: #140e08; }
+</style>
+
+<script is:inline>
+  (function () {
+    var dlg = document.getElementById('lb');
+    if (!dlg || !dlg.showModal) return;
+    var links = Array.prototype.slice.call(document.querySelectorAll('[data-lb]'));
+    var img = document.getElementById('lb-img');
+    var cap = document.getElementById('lb-caption');
+    var cnt = document.getElementById('lb-count');
+    var dl = document.getElementById('lb-download');
+    var orig = document.getElementById('lb-orig');
+    var cur = 0, opener = null;
+
+    function show(i) {
+      cur = (i + links.length) % links.length;
+      var a = links[cur];
+      img.src = a.dataset.full;
+      img.alt = a.dataset.caption || '';
+      var n = a.dataset.no ? a.dataset.no + '. ' : '';
+      cap.textContent = a.dataset.caption ? n + a.dataset.caption : '';
+      cap.hidden = !a.dataset.caption;
+      cnt.textContent = (cur + 1) + ' з ' + links.length;
+      dl.href = a.dataset.full;
+      if (a.dataset.orig) { orig.href = a.dataset.orig; orig.hidden = false; } else { orig.hidden = true; }
+      var nx = links[(cur + 1) % links.length]; if (nx) { new Image().src = nx.dataset.full; }
+    }
+    links.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault(); opener = a; show(i); dlg.showModal();
+      });
+    });
+    document.getElementById('lb-close').addEventListener('click', function () { dlg.close(); });
+    document.getElementById('lb-prev').addEventListener('click', function () { show(cur - 1); });
+    document.getElementById('lb-next').addEventListener('click', function () { show(cur + 1); });
+    dlg.addEventListener('close', function () { if (opener) opener.focus(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+    var x0 = null;
+    img.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    img.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+  })();
+</script>

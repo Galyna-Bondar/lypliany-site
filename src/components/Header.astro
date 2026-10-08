@@ -33,7 +33,6 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     <div class="flex items-center gap-1 no-print">
       <button type="button" id="size-down" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen" aria-label="Зменшити шрифт">A−</button>
       <button type="button" id="size-up" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen font-bold" aria-label="Збільшити шрифт">A+</button>
-      <button type="button" id="theme-toggle" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen" aria-label="Перемкнути світлу й темну тему">Тема</button>
     </div>
   </div>
 
@@ -61,11 +60,6 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     });
     document.getElementById('size-down').addEventListener('click', function () {
       var i = sizes.indexOf(get()); if (i > 0) set(sizes[i - 1]);
-    });
-    document.getElementById('theme-toggle').addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('lyp-theme', next); } catch (e) {}
     });
   })();
 </script>
