@@ -1,4 +1,5 @@
 ---
+import { bookPdf } from '../lib/book-pdf';
 import Base from '../layouts/Base.astro';
 
 const sections = [
@@ -28,6 +29,9 @@ const facts = [
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="/kniha/" class="bg-accent text-accent-ink font-semibold px-6 py-3 rounded hover:opacity-90">Читати книгу</a>
+        {bookPdf && (
+          <a href={bookPdf.href} download class="border-2 border-accent text-accent font-semibold px-6 py-3 rounded hover:bg-paper">Скачати книгу (PDF, {bookPdf.sizeMb} МБ)</a>
+        )}
         <a href="https://lypliany-spohady.com.ua/media" class="border-2 border-accent text-accent font-semibold px-6 py-3 rounded hover:bg-paper">Завантажити матеріали</a>
       </div>
     </div>
