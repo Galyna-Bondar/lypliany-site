@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('book')).sort((a, b) => a.data.order - b.data.order);
+  return entries.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: entries[i - 1], next: entries[i + 1] },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<Base title={d.title} description={`${d.part}. ${d.title}. Книга «Село Липляни Житомирської області у спогадах старожилів».`}>
+  <div id="progress" class="fixed top-0 left-0 h-1 bg-accent z-50 no-print" style="width:0"></div>
+
+  <article class="mx-auto max-w-3xl px-4 pt-10">
+    <nav aria-label="Навігація" class="text-sm text-muted">
+      <a href="/kniha/" class="underline underline-offset-4 hover:text-accent">Зміст</a>
+      <span aria-hidden="true"> › </span>
+      <span>{d.part}</span>
+    </nav>
+
+    <h1 class="font-serif font-bold text-ink text-3xl md:text-4xl leading-tight mt-3">
+      {d.number && <span class="text-muted">{d.number}. </span>}{d.title}
+    </h1>
+    {d.authors.length > 0 && (
+      <p class="mt-3 text-muted">Автор: {d.authors.join(', ')}</p>
+    )}
+
+    <div class="book-prose mt-8">
+      <Content />
+    </div>
+
+    <nav aria-label="Попередній і наступний розділ" class="mt-14 grid gap-3 sm:grid-cols-2 border-t border-line pt-6">
+      {prev ? (
+        <a href={`/kniha/${prev.id}/`} class="rounded border border-line p-4 hover:bg-linen text-ink">
+          <span class="text-sm text-muted block">← Попередній</span>
+          <span class="font-serif font-semibold">{prev.data.title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/kniha/${next.id}/`} class="rounded border border-line p-4 hover:bg-linen text-ink sm:text-right">
+          <span class="text-sm text-muted block">Наступний →</span>
+          <span class="font-serif font-semibold">{next.data.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </article>
+</Base>
+
+<script is:inline>
+  (function () {
+    var bar = document.getElementById('progress');
+    if (!bar) return;
+    function update() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>

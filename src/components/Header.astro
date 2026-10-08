@@ -1,0 +1,71 @@
+---
+const nav = [
+  { href: '/kniha/', label: 'Книга' },
+  { href: '/memorial/', label: 'Меморіал' },
+  { href: '/foto/', label: 'Фото' },
+  { href: '/audio/', label: 'Аудіо' },
+  { href: '/video/', label: 'Відео' },
+  { href: '/pro-knygu/', label: 'Про книгу' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(href);
+---
+<header class="border-b border-line bg-paper sticky top-0 z-40">
+  <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-3">
+    <a href="/" class="font-serif font-bold text-ink leading-tight text-lg">
+      Липляни
+      <span class="block font-sans font-normal text-muted text-sm">у спогадах старожилів</span>
+    </a>
+
+    <nav aria-label="Основне меню" class="hidden md:flex items-center gap-1">
+      {nav.map((i) => (
+        <a
+          href={i.href}
+          aria-current={isActive(i.href) ? 'page' : undefined}
+          class:list={[
+            'px-3 py-2 rounded font-semibold text-ink hover:bg-linen',
+            isActive(i.href) && 'bg-linen underline underline-offset-4 decoration-2 decoration-accent',
+          ]}
+        >{i.label}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-1 no-print">
+      <button type="button" id="size-down" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen" aria-label="Зменшити шрифт">A−</button>
+      <button type="button" id="size-up" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen font-bold" aria-label="Збільшити шрифт">A+</button>
+      <button type="button" id="theme-toggle" class="px-2.5 py-1.5 rounded border border-line text-ink hover:bg-linen" aria-label="Перемкнути світлу й темну тему">Тема</button>
+    </div>
+  </div>
+
+  <details class="md:hidden border-t border-line">
+    <summary class="px-4 py-3 font-semibold cursor-pointer text-ink select-none">Меню</summary>
+    <nav aria-label="Меню для телефона" class="px-4 pb-3 grid gap-1">
+      {nav.map((i) => (
+        <a href={i.href} class="px-3 py-3 rounded font-semibold text-ink hover:bg-linen">{i.label}</a>
+      ))}
+    </nav>
+  </details>
+</header>
+
+<script is:inline>
+  (function () {
+    var sizes = ['s', 'm', 'l', 'xl'];
+    var root = document.documentElement;
+    function get() { return root.getAttribute('data-size') || 'm'; }
+    function set(v) {
+      root.setAttribute('data-size', v);
+      try { localStorage.setItem('lyp-size', v); } catch (e) {}
+    }
+    document.getElementById('size-up').addEventListener('click', function () {
+      var i = sizes.indexOf(get()); if (i < sizes.length - 1) set(sizes[i + 1]);
+    });
+    document.getElementById('size-down').addEventListener('click', function () {
+      var i = sizes.indexOf(get()); if (i > 0) set(sizes[i - 1]);
+    });
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('lyp-theme', next); } catch (e) {}
+    });
+  })();
+</script>

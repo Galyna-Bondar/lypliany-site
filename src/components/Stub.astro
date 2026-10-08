@@ -1,0 +1,11 @@
+---
+interface Props { title: string; text: string }
+const { title, text } = Astro.props;
+---
+<div class="mx-auto max-w-3xl px-4 pt-14">
+  <h1 class="font-serif font-bold text-3xl md:text-4xl text-ink">{title}</h1>
+  <p class="mt-5 text-lg text-ink">{text}</p>
+  <p class="mt-6">
+    <a href="/kniha/" class="font-semibold text-accent underline underline-offset-4">До змісту книги →</a>
+  </p>
+</div>

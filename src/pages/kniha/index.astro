@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const entries = (await getCollection('book')).sort((a, b) => a.data.order - b.data.order);
+
+// Групуємо за розділами, зберігаючи порядок
+const groups: { part: string; items: typeof entries }[] = [];
+for (const e of entries) {
+  const g = groups.find((x) => x.part === e.data.part);
+  if (g) g.items.push(e);
+  else groups.push({ part: e.data.part, items: [e] });
+}
+---
+<Base title="Зміст книги" description="Зміст електронної книги «Село Липляни Житомирської області у спогадах старожилів».">
+  <div class="mx-auto max-w-3xl px-4 pt-10">
+    <h1 class="font-serif font-bold text-3xl md:text-4xl text-ink">Зміст книги</h1>
+    <p class="mt-3 text-muted">Розділи додаються поступово.</p>
+
+    {groups.map((g) => (
+      <section class="mt-10">
+        <h2 class="font-serif font-bold text-xl text-accent border-b border-line pb-2">{g.part}</h2>
+        <ol class="mt-3 grid gap-1">
+          {g.items.map((e) => (
+            <li>
+              <a href={`/kniha/${e.id}/`} class="flex gap-3 rounded px-2 py-3 text-ink hover:bg-linen">
+                {e.data.number && <span class="font-semibold text-muted min-w-10">{e.data.number}</span>}
+                <span class="font-serif text-lg">{e.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+</Base>

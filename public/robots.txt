@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lypliany-spohady.com.ua/sitemap-index.xml
