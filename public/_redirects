@@ -1,0 +1,4 @@
+# Адреса з книги: lypliany-spohady.com.ua/media веде на папку з матеріалами на Google Диску.
+# Якщо посилання на Диск зміниться, оновити тут і в src/lib/links.ts.
+/media https://drive.google.com/drive/folders/1LNljr6CmOLdBsSy_bVQZA-bPqDd_iTqn?usp=sharing 302
+/media/ https://drive.google.com/drive/folders/1LNljr6CmOLdBsSy_bVQZA-bPqDd_iTqn?usp=sharing 302
