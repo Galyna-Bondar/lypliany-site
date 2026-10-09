@@ -84,6 +84,35 @@ def ahash(im: Image.Image) -> int:
     return sum(1 << i for i, v in enumerate(px) if v > avg)
 
 
+# Очевидні друкарські помилки в підписах (автор набирав їх у назвах файлів)
+CAPTION_FIXES = {
+    "Хата Тимоха,Федори": "Хата Тимоха, Федори",
+    "Початк20, за цією хатою": "Початок 20 ст., за цією хатою",
+    "початк 20ст, за цією хатою": "початок 20 ст., за цією хатою",
+    "Сім_я": "Сім'я",
+    "почакку 20 стоіття": "початку 20 століття",
+    "бусел , в": "бусел, в",
+    "Коресподента": "Кореспондента",
+    "мам'ятник": "пам'ятник",
+    "ссолома": "солома",
+    "ліворруч": "ліворуч",
+    "Маомацьких": "Макомацьких",
+    "таких велике поле": "таке велике поле",
+    "св’яткуванні": "святкуванні",
+    "1958рік": "1958 рік",
+    "на Чумаки Фото": "на Чумаки. Фото",
+    "на Чумаки та центр села Фото": "на Чумаки та центр села. Фото"
+}
+
+
+def fix_caption(c):
+    if not c:
+        return c
+    for a, b in CAPTION_FIXES.items():
+        c = c.replace(a, b)
+    return c
+
+
 def caption_from_name(name: str):
     c = Path(name).stem
     for _ in range(4):
@@ -272,7 +301,7 @@ def main(album: str, docx: str):
                 "id": c["key"], "w": c["w"], "h": c["h"],
                 "tw": c["sizes"]["t"][0], "th": c["sizes"]["t"][1],
                 "vw": c["sizes"]["v"][0], "vh": c["sizes"]["v"][1],
-                "caption": c["caption"], "captionSource": c["csrc"] if c["caption"] else None,
+                "caption": fix_caption(c["caption"]), "captionSource": c["csrc"] if c["caption"] else None,
                 "ext": c["ext"],
             }
             if c["section"]:

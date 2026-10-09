@@ -1,4 +1,5 @@
 ---
+import { DRIVE_URL } from '../lib/links';
 const year = 2026;
 ---
 <footer class="border-t border-line bg-linen mt-16">
@@ -10,7 +11,7 @@ const year = 2026;
     </div>
     <nav aria-label="Додаткові посилання" class="grid gap-2 content-start">
       <a class="underline underline-offset-4 hover:text-accent" href="/kniha/">Зміст книги</a>
-      <a class="underline underline-offset-4 hover:text-accent" href="https://lypliany-spohady.com.ua/media">Завантажити фото, аудіо й відео</a>
+      {DRIVE_URL && <a class="underline underline-offset-4 hover:text-accent" href={DRIVE_URL} rel="noopener">Усі матеріали на Google Диску</a>}
       <a class="underline underline-offset-4 hover:text-accent" href="/podilytysya/">Поділитися своїми спогадами</a>
       <a class="underline underline-offset-4 hover:text-accent" href="/pro-knygu/">Про книгу й авторів</a>
     </nav>
