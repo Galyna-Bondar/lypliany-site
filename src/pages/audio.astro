@@ -1,7 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
-import Stub from '../components/Stub.astro';
+import audio from '../data/audio.json';
+import { MEDIA_BASE } from '../lib/media';
+
+const dur = (s: number) => {
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  return h ? `${h} год ${m} хв` : m ? `${m} хв ${String(x).padStart(2, '0')} с` : `${x} с`;
+};
+const groups = [
+  { id: 'interviews', title: 'Спогади старожилів', text: 'Записи розмов із мешканцями села. Тривалість вказана біля кожного запису.', items: audio.interviews },
+  { id: 'songs', title: 'Пісні й танці', text: 'Народні пісні, танці та улюблені твори з архіву автора.', items: audio.songs },
+  { id: 'other', title: 'Звуки села', text: '', items: audio.other },
+];
 ---
-<Base title="Голоси старожилів" noindex>
-  <Stub title="Голоси старожилів" text="Тут будуть аудіоінтерв’ю зі старожилами, пісні й танці, з можливістю слухати й завантажувати. Розділ у підготовці." />
+<Base title="Голоси старожилів" description="Аудіозаписи спогадів старожилів села Липляни, пісні й танці. Слухати онлайн і завантажувати безкоштовно.">
+  <div class="mx-auto max-w-3xl px-4 pt-10">
+    <h1 class="font-serif font-bold text-3xl md:text-4xl text-ink">Голоси старожилів</h1>
+    <p class="mt-3 text-lg text-ink">
+      Слухайте записи просто на сторінці або завантажуйте собі. Усе безкоштовно, без реєстрації.
+    </p>
+
+    {groups.filter((g) => g.items.length).map((g) => (
+      <section class="mt-10" aria-labelledby={g.id}>
+        <h2 id={g.id} class="font-serif font-bold text-2xl text-ink">{g.title}</h2>
+        {g.text && <p class="mt-1 text-muted">{g.text}</p>}
+        <ul class="mt-4 grid gap-4">
+          {g.items.map((a) => (
+            <li class="rounded-lg border border-line bg-paper p-4">
+              <p class="font-serif font-bold text-lg text-ink leading-snug">{a.title}</p>
+              <p class="text-muted">
+                {a.note ? `${a.note} · ` : ''}{dur(a.seconds)}
+              </p>
+              <audio class="mt-3 w-full" controls preload="none" src={`${MEDIA_BASE}/${a.file}`}>
+                Ваш браузер не підтримує відтворення аудіо.
+                <a href={`${MEDIA_BASE}/${a.file}`}>Завантажити запис</a>
+              </audio>
+              <p class="mt-2">
+                <a class="font-semibold text-accent underline underline-offset-4" href={`${MEDIA_BASE}/${a.file}`} download>
+                  Завантажити (mp3, {a.mb} МБ)
+                </a>
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <p class="mt-10 text-muted">
+      Розшифровки записів готуються. Усі матеріали книги (фото, аудіо, відео) разом можна завантажити з
+      <a class="text-accent underline underline-offset-4" href="/media" target="_blank" rel="noopener">Google Диска</a>.
+    </p>
+  </div>
 </Base>

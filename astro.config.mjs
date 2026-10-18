@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Сторінки-заглушки: не потрапляють у sitemap, поки не наповнені.
-const stubs = ['/memorial/', '/audio/', '/video/', '/podilytysya/'];
+const stubs = ['/memorial/', '/video/', '/podilytysya/'];
 
 export default defineConfig({
   site: 'https://lypliany-spohady.com.ua',

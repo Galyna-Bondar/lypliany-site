@@ -9,10 +9,9 @@ export type Theme = { slug: string; ref: string; title: string; photos: Photo[] 
 
 export const themes = data.themes as Theme[];
 
-// Оригінали (повний розмір) лежатимуть у Cloudflare R2. Коли бакет буде підключений до домену,
-// вписати сюди адресу, наприклад 'https://media.lypliany-spohady.com.ua/photos'.
-// Поки порожньо, кнопка «Оригінал» не показується.
-export const ORIGINALS_BASE = '';
+// Оригінали (повний розмір) лежать у Cloudflare R2: media.lypliany-spohady.com.ua/photos/<id><ext>
+import { MEDIA_BASE } from './media';
+export const ORIGINALS_BASE = `${MEDIA_BASE}/photos`;
 
 export const thumb = (p: Photo) => `/photos/${p.id}-t.webp`;
 export const view = (p: Photo) => `/photos/${p.id}-v.webp`;
