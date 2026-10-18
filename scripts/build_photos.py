@@ -250,6 +250,25 @@ def main(album: str, docx: str):
         cands.append({"theme": "karty" if idx < 3 else "ekskursiia", "section": None, "caption": cap,
                       "csrc": "docx", "path": path, "origin": "Вибране з фотоальбому.docx", "no": no})
 
+    # кадри екскурсії: в папці альбому лежать оригінали кліпу 6.11В2 («Фоторяд кліпу 2», файли «NN-…»).
+    # Якщо номер збігається з кадром із docx, беремо оригінал (краща якість), підпис лишаємо з docx.
+    # Кадри, яких у docx немає, додаємо як нові (підпис з назви файлу).
+    used_nums = set()
+    for p in sorted(album.rglob("*"), key=lambda x: natural(str(x))):
+        if not p.is_file() or p.suffix.lower() not in IMG_EXT or "Фоторяд" not in str(p) or p.name.startswith(("~", "._")):
+            continue
+        m = re.match(r"^\s*(\d+)", p.name)
+        n = int(m.group(1)) if m else None
+        rel = p.relative_to(album)
+        target = next((c for c in cands if c["theme"] == "ekskursiia" and c["csrc"] == "docx"
+                       and c["no"] == n and n not in used_nums), None) if n else None
+        if target:
+            target["path"], target["origin"] = p, str(rel)
+            used_nums.add(n)
+        else:
+            cands.append({"theme": "ekskursiia", "section": None, "caption": caption_from_name(p.name),
+                          "csrc": "filename", "path": p, "origin": str(rel), "no": n, "late": False})
+
     # ---- дедуплікація: точні копії в межах однієї теми зливаємо; між темами фото може повторюватися
     for c in cands:
         st = c["path"].stat()

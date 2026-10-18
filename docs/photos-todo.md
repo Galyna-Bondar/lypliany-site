@@ -1,6 +1,6 @@
 # TODO по фото
 
-Опубліковано фото: 442. Без підпису: 292. Підписи не вигадуємо: їх даємо лише з docx автора й назв файлів.
+Опубліковано фото: 441. Без підпису: 272. Підписи не вигадуємо: їх даємо лише з docx автора й назв файлів.
 
 ## Точні дублікати в межах теми (не опубліковані двічі)
 
@@ -67,25 +67,18 @@
 - P1010017.JPG: 6.5-Святкові дні/6.5. Липляни, Чоповичі/Нова папка-тест/P1010017.JPG ≡ 6.5-Святкові дні/6.5.5 Дубас Ольга 100 років/P1010017.JPG
 - село Липляни 017.jpg: 6.5-Святкові дні/6.5. Липляни, Чоповичі/Нова папка-тест/село Липляни 017.jpg ≡ 6.5-Святкові дні/6.5. Липляни, Чоповичі/4  Чоповичі/Нова папка 100 років/село Липляни 017.jpg
 - image1.jpeg: Вибране з фотоальбому.docx ≡ 6.1-Карти України,  словник польськийй/1 карта Боплана.jpg
+- 36 -хата ще під соломою, вишивання і ремонт одежі.jpg: 6.11В- Моє рідне село -відео/6.11В2 Наше рідне село Липляни-2-Борис/3 Фоторяд кліпу 2/36 -хата ще під соломою, вишивання і ремонт одежі.jpg ≡ 6.11В- Моє рідне село -відео/6.11В2 Наше рідне село Липляни-2-Борис/3 Фоторяд кліпу 2/20 -ще під соломою-19ст.jpg
+- 69- січень 2026р Подвір'я Олексійчука В.В. (Ладька).jpg: 6.11В- Моє рідне село -відео/6.11В2 Наше рідне село Липляни-2-Борис/3 Фоторяд кліпу 2/69- січень 2026р Подвір'я Олексійчука В.В. (Ладька).jpg ≡ Вибране з фотоальбому.docx
 
 ## Схожі фото (різний розмір чи обрізання): перевірити, чи не лишити одне
 
 - karty: 3-DSC_0676-Липляни.jpg ≈ karty: image3.jpeg
-- tserkva-budivli: 1-6.16  зима, копець, хата кінця 19 ст.jpg ≈ ekskursiia: image22.jpeg
-- tserkva-budivli: 4-DSC_0731-зруб-кінеця 19 століття.jpg ≈ ekskursiia: image24.jpeg
-- tserkva-budivli: 20250430_224736 Фото Білого В.М., поч 20 ст.jpg ≈ ekskursiia: image21.jpeg
-- tserkva-budivli: IMG_0476 - кінець 20 ст.JPG ≈ ekskursiia: image25.jpeg
 - tserkva-budivli: DSC_0735-в'яз, ліворуч місце церкви.jpg ≈ tserkva-budivli: DSC_0737 в'яз,  церква зліва.jpg
-- tserkva-budivli: img470-ікона з церкви с. Липляни 1915 р.jpg ≈ ekskursiia: image37.jpeg
-- tserkva-budivli: село Липляни 056-за цією хатою Пйоторки стояла церква.jpg ≈ ekskursiia: image20.jpeg
-- tserkva-budivli: село Липляни 044-кінець 19 ст.jpg ≈ ekskursiia: image38.jpeg
-- tserkva-budivli: Хата-кінець 20 ст, і Ліксандра Макомацька.jpg ≈ ekskursiia: image44.jpeg
 - ferma: DSC_0704.jpg ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - ferma: DSC_0704.jpg ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
 - ferma: DSC_0704.jpg ≈ tsentr-onovlenyi: IMG_0461.JPG
 - ferma: DSC_0704.jpg ≈ tsentr-onovlenyi: IMG_0468.JPG
 - ferma: DSC_0704.jpg ≈ tsentr-onovlenyi: IMG_0474.JPG
-- ferma: DSC_0704.jpg ≈ ekskursiia: image18.jpeg
 - ferma: DSC_0706.jpg ≈ ferma: DSC_0708.jpg
 - ferma: DSC_0706.jpg ≈ ferma: IMG_0512.JPG
 - ferma: DSC_0706.jpg ≈ ferma: IMG_0520.JPG
@@ -95,8 +88,6 @@
 - ferma: DSC_0706.jpg ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
 - ferma: DSC_0706.jpg ≈ tsentr-onovlenyi: IMG_0510.JPG
 - ferma: DSC_0706.jpg ≈ tsentr-onovlenyi: IMG_0516.JPG
-- ferma: DSC_0706.jpg ≈ ekskursiia: image31.jpeg
-- ferma: DSC_0706.jpg ≈ ekskursiia: image65.jpeg
 - ferma: DSC_0707.jpg ≈ ferma: DSC_0708.jpg
 - ferma: DSC_0707.jpg ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - ferma: DSC_0707.jpg ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
@@ -111,11 +102,7 @@
 - ferma: DSC_0708.jpg ≈ tsentr-onovlenyi: IMG_0468.JPG
 - ferma: DSC_0708.jpg ≈ tsentr-onovlenyi: IMG_0510.JPG
 - ferma: DSC_0708.jpg ≈ tsentr-onovlenyi: IMG_0516.JPG
-- ferma: DSC_0708.jpg ≈ ekskursiia: image18.jpeg
-- ferma: DSC_0708.jpg ≈ ekskursiia: image31.jpeg
-- ferma: DSC_0708.jpg ≈ ekskursiia: image65.jpeg
 - ferma: DSC_0712.jpg ≈ tsentr-onovlenyi: IMG_0509.JPG
-- ferma: DSC_0715.jpg ≈ ekskursiia: image30.jpeg
 - ferma: DSC_0719 -силосна яма.jpg ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
 - ferma: DSC_0722.jpg ≈ tsentr-onovlenyi: IMG_0458.JPG
 - ferma: DSC_0722.jpg ≈ tsentr-onovlenyi: IMG_0527.JPG
@@ -124,7 +111,6 @@
 - ferma: DSC_0723.jpg ≈ ferma: IMG_0529 - ліворуч-зерносховище.JPG
 - ferma: DSC_0723.jpg ≈ tsentr-onovlenyi: IMG_0449.JPG
 - ferma: DSC_0723.jpg ≈ tsentr-onovlenyi: IMG_0470.JPG
-- ferma: DSC_0723.jpg ≈ ekskursiia: image31.jpeg
 - ferma: DSC_0724.jpg ≈ ferma: IMG_0512.JPG
 - ferma: DSC_0724.jpg ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
 - ferma: IMG_0512.JPG ≈ ferma: IMG_0513.JPG
@@ -133,29 +119,19 @@
 - ferma: IMG_0512.JPG ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
 - ferma: IMG_0512.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
 - ferma: IMG_0512.JPG ≈ tsentr-onovlenyi: IMG_0461.JPG
-- ferma: IMG_0512.JPG ≈ ekskursiia: image31.jpeg
 - ferma: IMG_0513.JPG ≈ ferma: IMG_0520.JPG
 - ferma: IMG_0513.JPG ≈ ferma: IMG_0529 - ліворуч-зерносховище.JPG
 - ferma: IMG_0513.JPG ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
-- ferma: IMG_0513.JPG ≈ ekskursiia: image31.jpeg
 - ferma: IMG_0520.JPG ≈ ferma: IMG_0529 - ліворуч-зерносховище.JPG
 - ferma: IMG_0520.JPG ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
 - ferma: IMG_0520.JPG ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - ferma: IMG_0520.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
-- ferma: IMG_0520.JPG ≈ ekskursiia: image31.jpeg
 - ferma: IMG_0529 - ліворуч-зерносховище.JPG ≈ rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG
 - ferma: IMG_0529 - ліворуч-зерносховище.JPG ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - ferma: IMG_0529 - ліворуч-зерносховище.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
-- ferma: IMG_0529 - ліворуч-зерносховище.JPG ≈ ekskursiia: image31.jpeg
-- sviata: село Липляни 043.jpg ≈ ekskursiia: image33.jpeg
-- sviata: село Липляни 051.jpg ≈ ekskursiia: image35.jpeg
-- sviata: село Липляни 054.jpg ≈ ekskursiia: image36.jpeg
 - sviata: P1010034.JPG ≈ sviata: P1010035.JPG
 - sviata: P1010041.JPG ≈ sviata: село Липляни 033.jpg
-- sviata: DSC00035.JPG ≈ ekskursiia: image45.jpeg
 - rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
-- rizne: DSC00007-За кукурудзою Балярка, справа-кладовище.JPG ≈ ekskursiia: image31.jpeg
-- rizne: DSC00014.JPG ≈ ekskursiia: image62.jpeg
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0453.JPG
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0458.JPG
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0459.JPG
@@ -163,55 +139,34 @@
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0474.JPG
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
 - rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- rizne: IMG_0077-Соняшник між Варшавкоб і Баляркою.JPG ≈ ekskursiia: image63.jpeg
-- rizne: IMG_0078.JPG ≈ ekskursiia: image64.jpeg
 - rizne: IMG_0094.JPG ≈ rizne: IMG_0095.JPG
-- tsentr-2017: IMG_0353 Ворота Гарбара, магазин.JPG ≈ ekskursiia: image10.jpeg
-- tsentr-2017: IMG_0357.JPG ≈ ekskursiia: image11.jpeg
-- tsentr-2017: IMG_0359 Бібліотека, медпункт.JPG ≈ ekskursiia: image12.jpeg
-- tsentr-2017: IMG_0361 медпункт, бусел.JPG ≈ ekskursiia: image13.jpeg
 - tsentr-2017: IMG_0362 бусел.JPG ≈ tsentr-onovlenyi: IMG_0453.JPG
 - tsentr-2017: IMG_0362 бусел.JPG ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - tsentr-2017: IMG_0362 бусел.JPG ≈ tsentr-onovlenyi: IMG_0467.JPG
 - tsentr-2017: IMG_0362 бусел.JPG ≈ tsentr-onovlenyi: IMG_0468.JPG
 - tsentr-2017: IMG_0362 бусел.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
-- tsentr-2017: IMG_0362 бусел.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-2017: IMG_0362 бусел.JPG ≈ ekskursiia: image18.jpeg
 - tsentr-onovlenyi: IMG_0449.JPG ≈ tsentr-onovlenyi: IMG_0458.JPG
 - tsentr-onovlenyi: IMG_0449.JPG ≈ tsentr-onovlenyi: IMG_0459.JPG
 - tsentr-onovlenyi: IMG_0449.JPG ≈ tsentr-onovlenyi: IMG_0470.JPG
 - tsentr-onovlenyi: IMG_0449.JPG ≈ tsentr-onovlenyi: IMG_0471.JPG
 - tsentr-onovlenyi: IMG_0449.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0452.JPG ≈ ekskursiia: image15.jpeg
 - tsentr-onovlenyi: IMG_0453.JPG ≈ tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG
 - tsentr-onovlenyi: IMG_0453.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
 - tsentr-onovlenyi: IMG_0453.JPG ≈ tsentr-onovlenyi: IMG_0474.JPG
-- tsentr-onovlenyi: IMG_0453.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-onovlenyi: IMG_0453.JPG ≈ ekskursiia: image63.jpeg
-- tsentr-onovlenyi: IMG_0454.JPG ≈ ekskursiia: image16.jpeg
 - tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG
 - tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ tsentr-onovlenyi: IMG_0467.JPG
 - tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ tsentr-onovlenyi: IMG_0468.JPG
 - tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ tsentr-onovlenyi: IMG_0510.JPG
-- tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ ekskursiia: image18.jpeg
-- tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ ekskursiia: image31.jpeg
-- tsentr-onovlenyi: IMG_0455 -зліва-млин, справа-магазин.JPG ≈ ekskursiia: image65.jpeg
-- tsentr-onovlenyi: IMG_0456 -медпункт, бібліотека.JPG ≈ ekskursiia: image17.jpeg
 - tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ tsentr-onovlenyi: IMG_0461.JPG
 - tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ tsentr-onovlenyi: IMG_0468.JPG
 - tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ tsentr-onovlenyi: IMG_0510.JPG
 - tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ tsentr-onovlenyi: IMG_0516.JPG
-- tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ ekskursiia: image18.jpeg
-- tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ ekskursiia: image31.jpeg
-- tsentr-onovlenyi: IMG_0457  -ліворуч-млин, праворуч-магазин.JPG ≈ ekskursiia: image65.jpeg
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0459.JPG
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0467.JPG
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0471.JPG
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0474.JPG
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
 - tsentr-onovlenyi: IMG_0458.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0458.JPG ≈ ekskursiia: image63.jpeg
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0467.JPG
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0470.JPG
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0471.JPG
@@ -220,42 +175,23 @@
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0516.JPG
 - tsentr-onovlenyi: IMG_0459.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0459.JPG ≈ ekskursiia: image63.jpeg
 - tsentr-onovlenyi: IMG_0460 медпункт.JPG ≈ tsentr-onovlenyi: IMG_0467.JPG
 - tsentr-onovlenyi: IMG_0461.JPG ≈ tsentr-onovlenyi: IMG_0468.JPG
 - tsentr-onovlenyi: IMG_0461.JPG ≈ tsentr-onovlenyi: IMG_0507.JPG
 - tsentr-onovlenyi: IMG_0461.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
 - tsentr-onovlenyi: IMG_0461.JPG ≈ tsentr-onovlenyi: IMG_0510.JPG
-- tsentr-onovlenyi: IMG_0461.JPG ≈ ekskursiia: image18.jpeg
-- tsentr-onovlenyi: IMG_0461.JPG ≈ ekskursiia: image65.jpeg
 - tsentr-onovlenyi: IMG_0463.JPG ≈ tsentr-onovlenyi: IMG_0464.JPG
-- tsentr-onovlenyi: IMG_0465.JPG ≈ ekskursiia: image32.jpeg
 - tsentr-onovlenyi: IMG_0467.JPG ≈ tsentr-onovlenyi: IMG_0474.JPG
 - tsentr-onovlenyi: IMG_0467.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0467.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-onovlenyi: IMG_0467.JPG ≈ ekskursiia: image63.jpeg
 - tsentr-onovlenyi: IMG_0468.JPG ≈ tsentr-onovlenyi: IMG_0474.JPG
-- tsentr-onovlenyi: IMG_0468.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-onovlenyi: IMG_0468.JPG ≈ ekskursiia: image18.jpeg
 - tsentr-onovlenyi: IMG_0471.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0473.JPG ≈ ekskursiia: image19.jpeg
 - tsentr-onovlenyi: IMG_0474.JPG ≈ tsentr-onovlenyi: IMG_0509.JPG
 - tsentr-onovlenyi: IMG_0474.JPG ≈ tsentr-onovlenyi: IMG_0510.JPG
 - tsentr-onovlenyi: IMG_0474.JPG ≈ tsentr-onovlenyi: IMG_0516.JPG
 - tsentr-onovlenyi: IMG_0474.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0474.JPG ≈ ekskursiia: image18.jpeg
-- tsentr-onovlenyi: IMG_0474.JPG ≈ ekskursiia: image63.jpeg
-- tsentr-onovlenyi: IMG_0474.JPG ≈ ekskursiia: image65.jpeg
 - tsentr-onovlenyi: IMG_0509.JPG ≈ tsentr-onovlenyi: IMG_0527.JPG
-- tsentr-onovlenyi: IMG_0509.JPG ≈ ekskursiia: image14.jpeg
-- tsentr-onovlenyi: IMG_0509.JPG ≈ ekskursiia: image63.jpeg
 - tsentr-onovlenyi: IMG_0510.JPG ≈ tsentr-onovlenyi: IMG_0516.JPG
-- tsentr-onovlenyi: IMG_0510.JPG ≈ ekskursiia: image65.jpeg
-- tsentr-onovlenyi: IMG_0516.JPG ≈ ekskursiia: image65.jpeg
-- tsentr-onovlenyi: IMG_0527.JPG ≈ ekskursiia: image63.jpeg
-- tsentr-onovlenyi: IMG_0530.JPG ≈ ekskursiia: image61.jpeg
-- ekskursiia: image14.jpeg ≈ ekskursiia: image18.jpeg
-- ekskursiia: image49.jpeg ≈ ekskursiia: image67.jpeg
+- ekskursiia: 46 - могилки.jpg ≈ ekskursiia: 64-Погляд з Варшавки на Балярку.jpg
 
 ## Перевірити
 
@@ -290,7 +226,6 @@
 - 533c7a46dc
 - 6941dc7699
 - 4edd4d9d11
-- 5f81f192b1
 - 8738618040
 - 77994a0697
 - 1a99c291aa
@@ -353,16 +288,13 @@
 - bbdbae02e7
 - febf045d9e
 - 141b5b9950
-- 380a2c9cdb
 - 271ffa1004
 - 9e332d5758
 - b5f0551eda
 - e77db9b11a
 - 0f0ab3c9a8
-- d52454bd37
 - 0bb865f5ed
 - 818751efd7
-- 888e2b0b08
 - a55212da32
 - 4c265259a6
 - fd8a7a49cb
@@ -407,7 +339,6 @@
 - 9e07372a66
 - 3fe2136a50
 - 11cad1fdbf
-- b9fbbeb295
 - cb8fefdd71
 - 66f431a796
 - d0858e6d30
@@ -458,13 +389,11 @@
 - e587f61a82
 - 9b924dd4a7
 - 4ca24285d3
-- c5708ee16c
 
 ### Різні цікавинки
 - 5ee8e371d1
 - 4b95ae6c8a
 - 980af2442c
-- a89ab14ac7
 - 2101426bbb
 - eb36afe03f
 - d5f41d06c3
@@ -478,9 +407,7 @@
 - 5cd0f29c7f
 - 76133b1312
 - 4ca24285d3
-- c5708ee16c
 - a02260710a
-- c4fb8133c2
 - 0c4f7039e3
 - 46bdccd5c0
 - 57581c0aa7
@@ -501,7 +428,6 @@
 
 ### Центр села 2017 року
 - b6f11f8ceb
-- dbe9557743
 - 1c21c72db1
 
 ### Центр села, оновлений громадою 2017 р., та подорож селом
@@ -515,27 +441,20 @@
 - 54e0531e32
 - fe571df5fa
 - 512c04c3ed
-- 10e6fce4b4
 - e00e1970ec
-- 7e767913f4
 - 569b354de2
 - a49067a150
 - ca63cdd57b
 - 9907066c00
 - 66882b9c5d
 - d6f99ee15f
-- 7958540bbe
-- 2b5af31706
 - 3acc9019c3
-- 94099330f6
 - d2166736f8
 - 1ed38072c1
 - 31bf40be05
 - b9cabe9709
-- 14171c8ec8
 - 2abd56a180
 - 8df40605d1
-- 4176f77dd7
 - cc928f0044
 - 9b79a2020a
 - 81e4520ddc
@@ -550,7 +469,6 @@
 - ed8c6ce4ef
 - 4663f23ece
 - 771a0627b0
-- 6d96b7b52d
 - 6e885c198b
 - aed150395f
 - cfedaa335e
@@ -569,8 +487,6 @@
 - 946e0fb7ff
 - f4a52134c6
 - 57e4cf5f02
-- 9bb66931d4
-- d89d1f2137
 
 ### Шкільні роки
 - aba5b0d972
@@ -582,66 +498,46 @@
 
 - 60e1b06336: Липляни, Князья Гора
 - 7b50f9a3c2: Липляни
-- b88656cbdf: 1-6.16 зима, копець, хата кінця 19 ст
-- 1b1d72f2b9: Ще під соломою
-- 1590b3ff2c: Зруб-кінеця 19 століття
 - 02c8ae87b6: Каплиця з 2010 фото Білий В.М
-- ac8a242a1c: Каплиця з 2010 р
 - 5f72d38f5d: Хата Тимоха, Федори
-- d1a291d8ec: Фото Білого В.М., поч 20 ст
 - 898d0ae594: Хата Тимоха, Федори
 - 9076522245: Середина 20 століття
 - 716f94584d: В'яз, ліворуч місце церкви
 - 5ef75af52d: В'яз, церква зліва
-- 231114999f: В'яз
 - 9485abf307: Місце церкви, з цвинтарем ліворуч
 - 4e9ad8648c: В'яз
 - 923b2f124d: Велика гілка в'яза відламалась
-- 0d686ed550: Ясен, більше 100 років, слід блискавки
 - 84896832e0: Сліди від блискавки на стовбурі
 - 79a9978f4e: Ікона церкви 1915р
-- 680a593b43: Ікона з церкви с. Липляни 1915 р
 - df04f2d756: Кінець 20 ст.. хата Гарома
 - fcbf41acef: Ліпний візерунок прикрашає дерев'яну планку з церкви
 - f7d0ce51bf: Планка над дверима
-- 4176f77dd7: Кінець 20 ст
 - fa557eb89b: Полиця без бліка
-- 587f45bc01: Кінець 19 ст
 - 9cc3a0cd79: Хата, віконниці зроблені Макомацьким кінець 19 ст
-- 286f3c99bc: За цією хатою Пйоторки стояла церква
-- c575f819df: Хата-кінець 20 ст, і Ліксандра Макомацька
 - 84d57b418a: Накриття над скважиною
 - c5d94a2db6: Отвір- вхід скважини
 - bed5c2ec6f: Силосна яма
 - d8cbf0d9bf: Майданчик провітрювання зерна перед зерносховищем
-- 9bb66931d4: Ліворуч-зерносховище
 - d992eff85b: Київ. Меморіал Афганської війни 1979-1989
 - 76133b1312: Село Липляни
 - c7a4ceda87: Вертоліт на будівництві
 - 30819e4258: Базар в Коростені
-- 355badffe6: Соняшник між Варшавкоб і Баляркою
 - 537cbd1c1f: Ремонт переходу лежак-пряма труба димаря
 - d93597d239: Малин, пам'ятник Миклухо-Макл
 - 89fd7ce7f7: Квітамі карта Гвінеї
 - 210cf61cd8: Чоповичі церква
 - 3de615ae52: Вул. Центральна
-- 043b7e4460: Ворота Гарбара, магазин
 - f383eeb0ca: Парк
 - 60fc8b0158: Меморіал
-- 9025158361: Бібліотека, медпункт
 - 936ec45648: За Меморіалом були клуб, соснина
-- a526f293e7: Медпункт, бусел
-- 93db6c51fe: Бусел
 - 6564e8d640: Водонапірна башня, руїни ферми
 - 58620c5503: Иул. Центральна від Банячихи до Яринки
 - fbd498baa0: Хата Мар'ї Климковської
 - e97157e059: Зліва-млин, справа-магазин
-- cf65cb1dc7: Медпункт, бібліотека
 - dc4386e1bd: Ліворуч-млин, праворуч-магазин
 - 96f5367c21: Медпункт
 - 824eda7743: До школи
 - ec93c63823: Школа с. Липляни 1993 р
-- b88656cbdf: Копець (Реставрація — різкість)
 - b6e0858acc: Студент 1 курсу-канікули 1954 р
 - 9efafac4f7: Школа Чоповичі 1954 рік
 - 1dd5a2cbe6: Сім'я Шпакович Івана та Ольги
@@ -650,6 +546,6 @@
 - 15b8603bad: Олег Святославович-Овруч-2
 - 920b6edd12: Фото1, листопад 1915 року, Овруч
 - 56a4ad5630: Фото2, листопад 1915 року, Овруч
-- b88656cbdf: Зима, копець
 - b6e0858acc: Студент 1 курсу-канікули 1954 р
 - b0268073cd: Житлова кімната хати початку 20 століття
+- 5ef75af52d: В'яз, церква зліва
