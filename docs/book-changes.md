@@ -10,3 +10,8 @@
 - Частину заголовка, що містила імена й роки, винесено в перший абзац сторінки: 1 (3-3-moia-mama: 1)
 - Рядки, які були продовженням заголовка підрозділу (розірваного на кілька рядків у docx), прибрано з тексту й перенесено в заголовок сторінки: 8 (5-2-spysok-zhyteliv-s-lypliany: 1, 5-3-spysok-zakhoronenykh-u-bratskii: 2, 5-5-spysok-viiskovosluzhbovtsiv-partyzan-pidpilnykiv: 1, 5-6-spysok-uchasnykiv-viiny-iaki: 1, 5-7-spysok-viiskovosluzhbovtsiv-partyzan-pidpilnykiv: 1, 5-8-spysok-uchasnykiv-viiny-iaki: 2)
 - Таблиці з docx (текстовий формат pandoc) перетворено на HTML/GFM-таблиці; зміст комірок не змінено: 2 (5-3-spysok-zakhoronenykh-u-bratskii: 1, 5-4-spysok-viiskovykh-veteraniv: 1)
+
+## Оновлення 18.10.2026 (нова версія docx)
+
+- Основний текст книги не змінився; нова версія додала розділ «ДОДАТОК» наприкінці (опис сайту й адреса /media). На сайті він не публікується, у розділах нічого не змінено.
+- 1.1: прибрано службовий артефакт конвертації «[]{.underline}» перед посиланням на YouTube.

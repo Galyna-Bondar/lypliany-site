@@ -12,6 +12,7 @@
 """
 import hashlib
 import json
+import time
 import re
 import shutil
 import sys
@@ -24,6 +25,7 @@ from PIL import Image, ImageOps
 W_THUMB, W_VIEW = 480, 1200
 QUALITY = 78
 IMG_EXT = {".jpg", ".jpeg", ".png"}
+WORK_DIR = "6.5. Липляни, Чоповичі"  # робоча папка автора: дублікати 6.5.x + 35 фото «Чоповичі, 100 років»
 
 NS = {
     "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
@@ -39,7 +41,10 @@ THEMES = [
     ("ferma", "6.3", "Залишки будівель зруйнованої ферми, 90-ті роки"),
     ("pobut", "6.4", "Предмети побуту"),
     ("sviata", "6.5", "Святкові дні"),
+    ("bobyk", "6.6", "Бобик М. Д."),
     ("rizne", "6.7", "Різні цікавинки"),
+    ("tsentr-2017", "6.8", "Центр села 2017 року"),
+    ("tsentr-onovlenyi", "6.9", "Центр села, оновлений громадою 2017 р., та подорож селом"),
     ("shkola", "6.10", "Шкільні роки"),
     ("okremi", "6.12–6.21", "Окремі світлини з архіву"),
     ("ekskursiia", "6.11В", "Екскурсія селом (кадри з відеокліпу)"),
@@ -49,7 +54,8 @@ TITLE = {t[0]: t[2] for t in THEMES}
 # Папки альбому -> тема
 FOLDER_THEME = [
     ("6.1-", "karty"), ("6.2-", "tserkva-budivli"), ("6.3-", "ferma"), ("6.4-", "pobut"),
-    ("6.5-", "sviata"), ("6.7-", "rizne"), ("6.10-", "shkola"),
+    ("6.5-", "sviata"), ("6.6-", "bobyk"), ("6.7-", "rizne"), ("6.8-", "tsentr-2017"),
+    ("6.9-", "tsentr-onovlenyi"), ("6.10-", "shkola"),
 ]
 # Файли в корені альбому за початком назви -> тема
 ROOT_THEME = {"6.14": "shkola", "6.15": "shkola"}
@@ -204,15 +210,20 @@ def main(album: str, docx: str):
     data = Path("src/data")
     for d in (pub, orig, data, Path("docs")):
         d.mkdir(parents=True, exist_ok=True)
-    for f in pub.glob("*.webp"):
-        f.unlink()
+    T0 = time.time()
+    cache_f = orig.parent / "photo_cache.json"  # originals/ не потрапляє в git
+    cache = json.loads(cache_f.read_text()) if cache_f.exists() else {"md5": {}, "proc": {}}
 
     # ---- збір кандидатів: (theme, section, caption, caption_source, path, order_key)
     cands = []
+    skipped_work = []
     for p in sorted(album.rglob("*"), key=lambda x: natural(str(x))):
         if not p.is_file() or p.suffix.lower() not in IMG_EXT or p.name.startswith(("~", "._")):
             continue
         rel = p.relative_to(album)
+        if WORK_DIR in str(rel):
+            skipped_work.append(rel)  # робоча копія підпапок 6.5.x, у книзі її немає
+            continue
         parts = rel.parts
         theme = section = None
         if len(parts) == 1:
@@ -240,7 +251,12 @@ def main(album: str, docx: str):
 
     # ---- дедуплікація: точні копії в межах однієї теми зливаємо; між темами фото може повторюватися
     for c in cands:
-        c["md5"] = md5(c["path"])
+        st = c["path"].stat()
+        ck = f"{c['path']}|{st.st_size}|{int(st.st_mtime)}"
+        if ck not in cache["md5"]:
+            cache["md5"][ck] = md5(c["path"])
+        c["md5"] = cache["md5"][ck]
+    cache_f.write_text(json.dumps(cache))
     docx_cap = {c["md5"]: (c["caption"], c["no"]) for c in cands if c["csrc"] == "docx" and c["caption"]}
     kept = []
     seen = {}
@@ -266,12 +282,26 @@ def main(album: str, docx: str):
     for c in kept:
         key = c["md5"][:10]
         if key not in done:
-            (w, h), sizes, ah = process(c["path"], pub, key)
             ext = c["path"].suffix.lower()
-            shutil.copy2(c["path"], orig / f"{key}{ext}")
-            done[key] = dict(w=w, h=h, sizes=sizes, ext=ext, ahash=ah)
+            pr = cache["proc"].get(key)
+            if pr and (pub / f"{key}-t.webp").exists() and (pub / f"{key}-v.webp").exists() and (orig / f"{key}{ext}").exists():
+                done[key] = dict(w=pr["w"], h=pr["h"], sizes={k: tuple(v) for k, v in pr["sizes"].items()}, ext=ext, ahash=pr["ahash"])
+            else:
+                if time.time() - T0 > 140:  # команда має вкластися в ліміт часу: просто запустити ще раз
+                    cache_f.write_text(json.dumps(cache))
+                    print(f"ЧАСТКОВО: оброблено {len(done)} з {len(set(x['md5'] for x in kept))}, запустіть ще раз")
+                    sys.exit(3)
+                (w, h), sizes, ah = process(c["path"], pub, key)
+                shutil.copy2(c["path"], orig / f"{key}{ext}")
+                done[key] = dict(w=w, h=h, sizes=sizes, ext=ext, ahash=ah)
+                cache["proc"][key] = dict(w=w, h=h, sizes=sizes, ahash=ah)
             ahashes.append({"key": key, **done[key], "origin": c["origin"], "name": c["path"].name, "theme": c["theme"]})
         c.update(key=key, **{k: v for k, v in done[key].items() if k != "ahash"})
+
+    cache_f.write_text(json.dumps(cache))
+    for f in pub.glob("*.webp"):
+        if f.name.split("-")[0] not in done:
+            f.unlink()
 
     # ---- схожі (не точні) фото: тільки повідомляємо
     near = []
@@ -323,13 +353,12 @@ def main(album: str, docx: str):
     lines += [f"- {n}: {a} ≡ {b}" for a, b, n in dups] or ["Немає."]
     lines += ["\n## Схожі фото (різний розмір чи обрізання): перевірити, чи не лишити одне\n"]
     lines += [f"- {a['theme']}: {a['name']} ≈ {b['theme']}: {b['name']}" for a, b in near] or ["Немає."]
-    lines += ["\n## Теми з розділу 6 без фото в переданій папці\n",
-              "- 6.6 Бобик М. Д.: папка порожня",
-              "- 6.8 Центр села 2017 року: папка порожня",
-              "- 6.9 Центр села, оновлений громадою 2017 р.: папка порожня",
-              "- 6.5.3 Вишивка Раї Шикарного: папка порожня",
+    cnt = {t["slug"]: len(t["photos"]) for t in out_themes}
+    lines += ["\n## Перевірити\n",
               "- 6.5.6: у книзі «8 травня 2018 року», у назві папки «9 травня 2018 р». Уточнити дату",
-              "- 6.3, 6.4: в описі книги 34 і 31 фото, у папках лише частина",
+              f"- Кількість за описом книги: 6.3 — 34 фото (на сайті {cnt.get('ferma', 0)}), 6.4 — 31 (на сайті {cnt.get('pobut', 0)})",
+              f"- Робоча папка «{WORK_DIR}» пропущена ({len(skipped_work)} файлів). Більшість є копіями фото 6.5.1–6.5.5, "
+              "але в «4 Чоповичі / … 100 років» є ~35 унікальних фото, яких у книзі немає. Уточнити, чи додавати",
               "\n## Фото без підпису\n"]
     fn = [(t["title"], p) for t in out_themes for p in t["photos"] if p["captionSource"] == "filename"]
     lines2 = ["\n## Підписи з назв файлів (автор набирав їх сам): перевірити правопис\n"]
