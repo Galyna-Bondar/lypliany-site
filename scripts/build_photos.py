@@ -277,7 +277,13 @@ def main(album: str, docx: str):
             cache["md5"][ck] = md5(c["path"])
         c["md5"] = cache["md5"][ck]
     cache_f.write_text(json.dumps(cache))
-    docx_cap = {c["md5"]: (c["caption"], c["no"]) for c in cands if c["csrc"] == "docx" and c["caption"]}
+    # підпис з docx переписує підпис з назви файлу лише тоді, коли для цього фото в docx він один:
+    # одне фото може стояти в docx під двома номерами з різними підписами (напр. 20 і 36)
+    _caps = {}
+    for c in cands:
+        if c["csrc"] == "docx" and c["caption"]:
+            _caps.setdefault(c["md5"], set()).add((c["caption"], c["no"]))
+    docx_cap = {m: next(iter(v)) for m, v in _caps.items() if len({x[0] for x in v}) == 1}
     kept = []
     seen = {}
     dups = []
@@ -291,6 +297,18 @@ def main(album: str, docx: str):
             continue
         seen[k] = c
         kept.append(c)
+    # глобально: те саме фото не показуємо двічі на сайті (лишається в темі, що йде раніше за списком THEMES)
+    prio = {slug: i for i, (slug, _, _) in enumerate(THEMES)}
+    best = {}
+    for c in sorted(kept, key=lambda c: prio[c["theme"]]):
+        if c["md5"] in best:
+            keep = best[c["md5"]]
+            dups.append((c["origin"], keep["origin"], c["path"].name))
+            if not keep["caption"] and c["caption"]:
+                keep["caption"], keep["csrc"] = c["caption"], c["csrc"]
+            continue
+        best[c["md5"]] = c
+    kept = [c for c in kept if best[c["md5"]] is c]
     for c in kept:
         if c["md5"] in docx_cap and c["csrc"] != "docx":
             c["caption"], _ = docx_cap[c["md5"]]
@@ -369,7 +387,7 @@ def main(album: str, docx: str):
     nocap = [(t["title"], p) for t in out_themes for p in t["photos"] if not p["caption"]]
     lines = ["# TODO по фото\n",
              f"Опубліковано фото: {total}. Без підпису: {len(nocap)}. Підписи не вигадуємо: їх даємо лише з docx автора й назв файлів.\n",
-             "## Точні дублікати в межах теми (не опубліковані двічі)\n"]
+             "## Точні дублікати (на сайті показано одну копію)\n"]
     lines += [f"- {n}: {a} ≡ {b}" for a, b, n in dups] or ["Немає."]
     lines += ["\n## Схожі фото (різний розмір чи обрізання): перевірити, чи не лишити одне\n"]
     lines += [f"- {a['theme']}: {a['name']} ≈ {b['theme']}: {b['name']}" for a, b in near] or ["Немає."]
