@@ -1,0 +1,191 @@
+[
+ {
+  "file": "audio/interview-01.mp3",
+  "kind": "interview",
+  "original": "6.11.1-НайдюкІС=31хв31с.mp3",
+  "seconds": 1891,
+  "bytes": 75640000
+ },
+ {
+  "file": "audio/interview-02.mp3",
+  "kind": "interview",
+  "original": "6.11.2-Оленка=46хв39с.mp3",
+  "seconds": 2799,
+  "bytes": 111971647
+ },
+ {
+  "file": "audio/interview-03.mp3",
+  "kind": "interview",
+  "original": "6.11.3-Олька Санькова.mp3",
+  "seconds": 1749,
+  "bytes": 69949927
+ },
+ {
+  "file": "audio/interview-04.mp3",
+  "kind": "interview",
+  "original": "6.11.4-Надя Лексійова+Олька Саньк з 1г05хв=1г35хв06с.mp3",
+  "seconds": 5707,
+  "bytes": 228260439
+ },
+ {
+  "file": "audio/interview-05.mp3",
+  "kind": "interview",
+  "original": "6.11.5-Степан Гресь=1г33хв49с.mp3",
+  "seconds": 5630,
+  "bytes": 225197906
+ },
+ {
+  "file": "audio/interview-06.mp3",
+  "kind": "interview",
+  "original": "6.11.6-ГалинаЯкуб=29хв58с.mp3",
+  "seconds": 1798,
+  "bytes": 71926707
+ },
+ {
+  "file": "audio/interview-unlabeled-44.mp3",
+  "kind": "interview",
+  "original": "Стандартний запис 44.mp3",
+  "seconds": 314,
+  "bytes": 12564765
+ },
+ {
+  "file": "audio/interview-09.mp3",
+  "kind": "interview",
+  "original": "Стз09-БілаТК=1г34хв02с.mp3",
+  "seconds": 5643,
+  "bytes": 225705327
+ },
+ {
+  "file": "audio/interview-10.mp3",
+  "kind": "interview",
+  "original": "Стз10-Остренський Євген=1г-00хв-52с.mp3",
+  "seconds": 3652,
+  "bytes": 146095321
+ },
+ {
+  "file": "audio/nightingale-2012.mp3",
+  "kind": "nature",
+  "original": "- соловейко на вишні під нашим  вікном 2012 р..WMA",
+  "seconds": 274,
+  "bytes": 2405183
+ },
+ {
+  "file": "audio/song-01.mp3",
+  "kind": "song",
+  "original": "1. Мама, співає Робертіно Лоретті, 13 років.mp3",
+  "seconds": 125,
+  "bytes": 5019084
+ },
+ {
+  "file": "audio/song-10.mp3",
+  "kind": "song",
+  "original": "10. Ой чий то кінь стоїть, Ст.. з. 57.mp3",
+  "seconds": 253,
+  "bytes": 10132261
+ },
+ {
+  "file": "audio/song-11.mp3",
+  "kind": "song",
+  "original": "11. Ой під калиною трава зеленая Ст-з- 62.mp3",
+  "seconds": 243,
+  "bytes": 9704403
+ },
+ {
+  "file": "audio/song-12.mp3",
+  "kind": "song",
+  "original": "12.  Полька, танець, Ст. з. 53.mp3",
+  "seconds": 226,
+  "bytes": 9022723
+ },
+ {
+  "file": "audio/song-13.mp3",
+  "kind": "song",
+  "original": "13. Ойра Волинь Ст. з. 58.mp3",
+  "seconds": 240,
+  "bytes": 9612962
+ },
+ {
+  "file": "audio/song-14.mp3",
+  "kind": "song",
+  "original": "14.  Київська ОйраСт.. з. 59.mp3",
+  "seconds": 132,
+  "bytes": 5289509
+ },
+ {
+  "file": "audio/song-15.mp3",
+  "kind": "song",
+  "original": "15. Ойра -Луцьк.mp3",
+  "seconds": 170,
+  "bytes": 6809625
+ },
+ {
+  "file": "audio/song-16.mp3",
+  "kind": "song",
+  "original": "16. Краков'як  Ст.з. 61.mp3",
+  "seconds": 141,
+  "bytes": 5623184
+ },
+ {
+  "file": "audio/song-17.mp3",
+  "kind": "song",
+  "original": "17. Гопак Ст. з. 66.mp3",
+  "seconds": 329,
+  "bytes": 13157695
+ },
+ {
+  "file": "audio/song-02.mp3",
+  "kind": "song",
+  "original": "2. Санта Лючія, співає Робертіно Лоретті.mp3",
+  "seconds": 163,
+  "bytes": 6517651
+ },
+ {
+  "file": "audio/song-03.mp3",
+  "kind": "song",
+  "original": "3. Аве Марія, співає Робертіно Лоретті.mp3",
+  "seconds": 239,
+  "bytes": 9576258
+ },
+ {
+  "file": "audio/song-04.mp3",
+  "kind": "song",
+  "original": "4. Така її доля, співаєБорис Гмиря, фортеп'яно.mp3",
+  "seconds": 314,
+  "bytes": 12564765
+ },
+ {
+  "file": "audio/song-05.mp3",
+  "kind": "song",
+  "original": "5. Така її доля, співаєБорис Гмиря, оркестр.mp3",
+  "seconds": 246,
+  "bytes": 9844929
+ },
+ {
+  "file": "audio/song-06.mp3",
+  "kind": "song",
+  "original": "6.  Гей, гиля-гиля, гусоньки на став.mp3",
+  "seconds": 197,
+  "bytes": 7871950
+ },
+ {
+  "file": "audio/song-07.mp3",
+  "kind": "song",
+  "original": "7. Посіяла огірочки, Ст. з. 51.mp3",
+  "seconds": 225,
+  "bytes": 9001206
+ },
+ {
+  "file": "audio/song-08.mp3",
+  "kind": "song",
+  "original": "8.  Ой під вишнею, під черешнею.mp3",
+  "seconds": 131,
+  "bytes": 5231364
+ },
+ {
+  "file": "audio/song-09.mp3",
+  "kind": "song",
+  "original": "9. Чи я, мамо, не доріс.mp3",
+  "seconds": 97,
+  "bytes": 3865603
+ }
+]
