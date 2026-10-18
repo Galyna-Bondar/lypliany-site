@@ -26,6 +26,7 @@ W_THUMB, W_VIEW = 480, 1200
 QUALITY = 78
 IMG_EXT = {".jpg", ".jpeg", ".png"}
 WORK_DIR = "6.5. Липляни, Чоповичі"  # робоча папка автора: дублікати 6.5.x + 35 фото «Чоповичі, 100 років»
+SECTION_CHOPOVYCHI = "Чоповичі (з папки автора «100 років»)"
 
 NS = {
     "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
@@ -216,14 +217,11 @@ def main(album: str, docx: str):
 
     # ---- збір кандидатів: (theme, section, caption, caption_source, path, order_key)
     cands = []
-    skipped_work = []
     for p in sorted(album.rglob("*"), key=lambda x: natural(str(x))):
         if not p.is_file() or p.suffix.lower() not in IMG_EXT or p.name.startswith(("~", "._")):
             continue
         rel = p.relative_to(album)
-        if WORK_DIR in str(rel):
-            skipped_work.append(rel)  # робоча копія підпапок 6.5.x, у книзі її немає
-            continue
+        late = WORK_DIR in str(rel)  # робоча папка автора: обробляємо останньою, щоб дублікати 6.5.x лишились у своїх розділах
         parts = rel.parts
         theme = section = None
         if len(parts) == 1:
@@ -239,10 +237,13 @@ def main(album: str, docx: str):
                 for k, v in SECTIONS_65.items():
                     if any(seg.startswith(k) for seg in parts):
                         section = v
+                if late and "4  Чоповичі" in str(rel):
+                    section = SECTION_CHOPOVYCHI
         if not theme:
             continue
         cands.append({"theme": theme, "section": section, "caption": caption_from_name(p.name),
-                      "csrc": "filename", "path": p, "origin": str(rel), "no": None})
+                      "csrc": "filename", "path": p, "origin": str(rel), "no": None, "late": late})
+    cands.sort(key=lambda c: c["late"])  # стабільно: робоча папка в кінці
     # docx «Вибране»: перші три зображення (підписи 01–03) — карти й план, далі 1…72 — екскурсія селом
     tmpdir = orig.parent / "vybrane-extracted"
     for idx, (no, cap, path) in enumerate(docx_images(docx, tmpdir)):
@@ -322,7 +323,7 @@ def main(album: str, docx: str):
         elif slug == "karty":
             items.sort(key=lambda c: (c["csrc"] != "docx", c["no"] or 0, natural(c["origin"])))
         else:
-            sec_order = list(SECTIONS_65.values())
+            sec_order = list(SECTIONS_65.values()) + [SECTION_CHOPOVYCHI]
             items.sort(key=lambda c: ((sec_order.index(c["section"]) if c["section"] in sec_order else -1),
                                       natural(c["path"].name)))
         plist = []
@@ -357,8 +358,8 @@ def main(album: str, docx: str):
     lines += ["\n## Перевірити\n",
               "- 6.5.6: у книзі «8 травня 2018 року», у назві папки «9 травня 2018 р». Уточнити дату",
               f"- Кількість за описом книги: 6.3 — 34 фото (на сайті {cnt.get('ferma', 0)}), 6.4 — 31 (на сайті {cnt.get('pobut', 0)})",
-              f"- Робоча папка «{WORK_DIR}» пропущена ({len(skipped_work)} файлів). Більшість є копіями фото 6.5.1–6.5.5, "
-              "але в «4 Чоповичі / … 100 років» є ~35 унікальних фото, яких у книзі немає. Уточнити, чи додавати",
+              f"- Секція «{SECTION_CHOPOVYCHI}» (6.5): ці фото були лише в робочій папці автора «{WORK_DIR}», "
+              "у книзі для них розділу немає. Уточнити розділ книги, підписи й дати",
               "\n## Фото без підпису\n"]
     fn = [(t["title"], p) for t in out_themes for p in t["photos"] if p["captionSource"] == "filename"]
     lines2 = ["\n## Підписи з назв файлів (автор набирав їх сам): перевірити правопис\n"]
