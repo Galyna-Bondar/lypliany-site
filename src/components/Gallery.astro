@@ -55,7 +55,6 @@ const alt = (p: Photo) => p.caption ?? `Фото з теми «${themeTitle}»`;
       </div>
       <p class="max-w-3xl mx-auto mt-3 flex flex-wrap gap-x-5 gap-y-1 text-base">
         <a id="lb-download" download class="underline underline-offset-4">Завантажити фото</a>
-        <a id="lb-orig" download class="underline underline-offset-4" hidden>Завантажити оригінал</a>
       </p>
     </div>
   </div>
@@ -75,7 +74,6 @@ const alt = (p: Photo) => p.caption ?? `Фото з теми «${themeTitle}»`;
     var cap = document.getElementById('lb-caption');
     var cnt = document.getElementById('lb-count');
     var dl = document.getElementById('lb-download');
-    var orig = document.getElementById('lb-orig');
     var cur = 0, opener = null;
 
     function show(i) {
@@ -87,8 +85,7 @@ const alt = (p: Photo) => p.caption ?? `Фото з теми «${themeTitle}»`;
       cap.textContent = a.dataset.caption ? n + a.dataset.caption : '';
       cap.hidden = !a.dataset.caption;
       cnt.textContent = (cur + 1) + ' з ' + links.length;
-      dl.href = a.dataset.full;
-      if (a.dataset.orig) { orig.href = a.dataset.orig; orig.hidden = false; } else { orig.hidden = true; }
+      dl.href = a.dataset.orig || a.dataset.full;  // оригінал, а якщо його нема, стиснена версія
       var nx = links[(cur + 1) % links.length]; if (nx) { new Image().src = nx.dataset.full; }
     }
     links.forEach(function (a, i) {
