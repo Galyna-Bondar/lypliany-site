@@ -26,7 +26,7 @@ const alt = (p: Photo) => p.caption ?? `Фото з теми «${themeTitle}»`;
           alt={alt(p)}
           loading="lazy"
           decoding="async"
-          class="w-full aspect-[4/3] object-cover"
+          class="w-full aspect-[4/3] object-contain bg-linen"
         />
       </a>
       {p.caption && (
